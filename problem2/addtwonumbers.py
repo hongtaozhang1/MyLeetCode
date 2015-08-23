@@ -3,10 +3,11 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
-# @param {ListNode} l1
-# @param {ListNode} l2
-# @return {ListNode} 
+    # @param {ListNode} l1
+    # @param {ListNode} l2
+    # @return {ListNode}
     def addTwoNumbers(self, l1, l2):
         p1 = l1
         p2 = l2
@@ -33,7 +34,7 @@ class Solution:
         if p2 is not None:
             while p2 is not None:
                 val = (p2.val + c1) % 10
-                c2 = (p2.val + c1) /10
+                c2 = (p2.val + c1) / 10
                 c1 = c2
                 p.next = ListNode(val)
 #                p3.next = p
@@ -45,7 +46,7 @@ class Solution:
         elif p1 is not None:
             while p1 is not None:
                 val = (p1.val + c1) % 10
-                c2 = (p1.val + c1) /10
+                c2 = (p1.val + c1) / 10
                 c1 = c2
                 p.next = ListNode(val)
 #                p3.next = p
@@ -53,15 +54,14 @@ class Solution:
 #                    answer = p
                 p = p.next
                 p1 = p1.next
-#                count += 1 
-        
+#                count += 1
+
         if c1 != 0:
             p.next = ListNode(1)
             p = p.next
         return answer.next
 
 
-                
 solution = Solution()
 
 l1 = ListNode(2)
